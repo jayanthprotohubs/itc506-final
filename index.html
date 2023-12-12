@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lights Out Game</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="welcomeScreen">
+        <h1>Welcome to Lights Out!</h1>
+        <button id="startGame">Start Game</button>
+        <button id="showInstructions">Instructions</button>
+        <button id="showAddendum">Addendum</button>
+
+        <div id="instructionsModal" class="modal">
+            <h2>Instructions</h2>
+            <p>Click on any cell to toggle the light. The goal is to turn off all the lights. Clicking a cell will also toggle adjacent cells. Good luck!</p>
+            <button id="closeInstructions">Close</button>
+        </div>
+
+        <div id="addendumModal" class="modal">
+            <h2>Addendum</h2>
+            <p>Describe your process, creative choices, challenges faced, and insights gained here.</p>
+            <button id="closeAddendum">Close</button>
+        </div>
+    </div>
+    <div id="gameBoard" style="display:none;">
+        <div id="timer">Time: <span id="timeElapsed">0</span> seconds</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
