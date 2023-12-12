@@ -12,13 +12,6 @@ body {
 
 h1 {
     color: #333;
-    animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
 }
 
 #welcomeScreen {
@@ -28,6 +21,11 @@ h1 {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
 
 button {
@@ -40,17 +38,11 @@ button {
     border-radius: 5px;
     margin: 10px;
     transition: background-color 0.3s, transform 0.2s;
-    animation: pulseButton 2s infinite;
-}
-
-@keyframes pulseButton {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
 }
 
 button:hover {
     background-color: #0056b3;
+    transform: scale(1.05);
 }
 
 #gameBoard {
@@ -65,6 +57,11 @@ button:hover {
     animation: slideUp 0.5s ease-out;
 }
 
+@keyframes slideUp {
+    from {transform: translateY(20px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+}
+
 .cell {
     width: 60px;
     height: 60px;
@@ -77,21 +74,17 @@ button:hover {
     font-size: 20px;
     font-weight: bold;
     user-select: none;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-.cell.is-off {
+.cell:hover {
+    transform: scale(1.1);
+}
+
+.is-off {
     background-color: #ccc;
     color: #333;
-}
-
-.cell:not(.is-off):hover {
-    transform: rotateY(180deg);
-}
-
-.cell.is-off:hover {
-    transform: rotateX(180deg);
+    transition: background-color 0.3s;
 }
 
 .modal {
@@ -107,4 +100,20 @@ button:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     z-index: 2;
     animation: fadeIn 0.5s;
+}
+
+.modal h2 {
+    color: #333;
+}
+
+.modal p {
+    color: #666;
+}
+
+.modal button {
+    background-color: #28a745;
+}
+
+.modal button:hover {
+    background-color: #218838;
 }
